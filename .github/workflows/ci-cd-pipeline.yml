@@ -62,8 +62,8 @@ jobs:
       
       - name: Push Docker image to Docker Hub
         run: |
-          docker push emergencytechops/mlops-models:latest
-          docker push emergencytechops/mlops-models:${{ github.sha }}
+          docker push sujatha27/kuldeep45:latest
+          docker push sujatha27/kuldeep45:${{ github.sha }}
 
   deploy:
     needs: build
@@ -85,7 +85,7 @@ jobs:
       - name: Generate Helm chart
         run: |
           helm create dockerlabs
-          sed -i 's|repository: ""|repository: emergencytechops/mlops-models|' ./dockerlabs/values.yaml
+          sed -i 's|repository: ""|repository: sujatha27/kuldeep45|' ./dockerlabs/values.yaml
           sed -i 's|tag: ""|tag: latest|' ./dockerlabs/values.yaml
 
       - name: Package Helm chart
