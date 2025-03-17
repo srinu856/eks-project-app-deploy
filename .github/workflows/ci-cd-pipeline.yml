@@ -25,11 +25,11 @@ jobs:
       
       - name: Build Docker image
         run: |
-          docker build -t emergencytechops/mlops-models:latest .
+          docker build -t sujatha27/kuldeep45:latest .
 
       - name: Tag Docker image
         run: |
-          docker tag emergencytechops/mlops-models:latest emergencytechops/mlops-models:${{ github.sha }}
+          docker tag sujatha27/kuldeep45:latest sujatha27/kuldeep45:${{ github.sha }}
       
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
